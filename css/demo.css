@@ -1,0 +1,88 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.demo_flex {
+    background-color: black;
+    /* đơn vị đo mới: vh (view-height); vw (view-width) */
+    height: 100vh;
+
+    /* lưu ý khi sử dụng view-width: khi ở 1 số trình duyệt, dùng 100vw sẽ chưa bao gồm thanh scoll ngang  */
+    width: 100vw;
+
+    /* flex-box */
+    /* sử dụng display: flex để đưa phần tử lên cùng 1 dòng */
+    /* justify-content nhận vào 1 số giá trị: */
+    /* center đưa các phần tử nắm giữa */
+    /* space-between đưa phần tử đầu nằm về bên trái và p tử cuối nằm bên phải */
+    /* align-items điều chỉnh flex theo chiều dọc */
+    /* có 1 số giá trị center đưa các phần tử nằm giữa theo chiều dọc, flex-end đưa các phần tử nằm xuống cuối theo chiều dọc */
+
+    display: flex;
+
+    /* justify-content: là thuộc tính giúp điều chỉnh các phần tử dựa trên trục chính, mặc định sẽ là trục ngang, cần chú ý hướng của trục khi sử dụng flex-direction */
+    justify-content: center;
+    align-items: center;
+
+    /* flex-direction giúp đảo chiều trục của flex */
+    /* trục mặc định sẽ là trục ngang đi từ trái qua phải */
+    /* giá trị row-reverse sẽ giúp đảo ngược chiều trục nagng đi từ phỈ qua trái */
+    flex-direction: column;
+}
+
+.flex_item {
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    margin: 15px;
+    font-size: 25px;
+    color: aliceblue;
+}
+
+/* before */
+/* before là 1 thẻ ảo từ css giúp truyền 1 nội dung lên trước nội dung mà thẻ đó đang chứa */
+p {
+    width: 200px;;
+    height: 200px;
+    background-color: pink;
+    position: relative;
+}
+.demo_before_after p::before {
+    content: "Hom nay";
+    display: inline-block;
+    width: 50px;
+    height: 100%;
+    background-color: red;
+    position: absolute;
+    right: 0;
+}
+
+/* after sẽ giống before nhưng đưa nội dung nằm sau nội dung thẻ */
+.demo_before_after p::after {
+    content: "Đi Học";
+}
+
+
+.demo_transform {
+    background-color: brown;
+    height: 50vh;
+}
+.demo__3 {
+    width: 200px;
+    height: 200px;
+    background-color: yellow;
+    /* transform: translateY(50px); */
+    
+    transition: all .5s;
+    /* translateX() */
+    /* rolate(...deg): truyền vào độ nghiêng */
+    /* scale(): tăng kích thước như 2 lần, 1.5 lần,... */
+}
+
+.demo__3:hover {
+    transform: scale(1.5) rotate(45deg);
+    /* transform: translateX(50px);
+    transform: translateY(50px); */
+    transform: translate(100px,100px);
+}
